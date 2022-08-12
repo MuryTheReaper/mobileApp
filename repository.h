@@ -33,7 +33,7 @@ public:
 
   const product &find(const product &x) const;
 
-  const std::vector<product> &getAll() const noexcept { return list; };
+  const std::vector<product> &getAll() const noexcept { return list; }
 };
 
 class repoException {

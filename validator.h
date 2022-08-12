@@ -9,8 +9,7 @@ using std::vector;
 
 class validator {
 public:
-  void validate(const int &id, const string &name, const float &price,
-                const int &units);
+  void validate(const string &name, const float &price, const int &units);
 };
 
 class validatorException {

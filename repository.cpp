@@ -44,7 +44,6 @@ void repository::modify(const product &x) {
   bool found = false;
   for (auto &y : list) {
     if (x == y) {
-      y.setId(x.getId());
       y.setName(x.getName());
       y.setPrice(x.getPrice());
       y.setUnits(x.getUnits());

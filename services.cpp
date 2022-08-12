@@ -5,34 +5,33 @@ std::ostream &operator<<(std::ostream &out, const servicesException &ex) {
   return out;
 }
 
-void services::add(const int &id, const string &name, const float &price,
-                   const int &units) {
+void services::add(const string &name, const float &price, const int &units) {
 
-  val.validate(id, name, price, units);
-  product x{id, name, price, units};
+  val.validate(name, price, units);
+  product x{name, price, units};
   repo.add(x);
 }
 
-void services::remove(const int &id, const string &name, const float &price,
+void services::remove(const string &name, const float &price,
                       const int &units) {
 
-  val.validate(id, name, price, units);
-  product x{id, name, price, units};
+  val.validate(name, price, units);
+  product x{name, price, units};
   repo.remove(x);
 }
 
-const product &services::find(const int &id, const string &name,
-                              const float &price, const int &units) {
+const product &services::find(const string &name, const float &price,
+                              const int &units) {
 
-  val.validate(id, name, price, units);
-  product x{id, name, price, units};
+  val.validate(name, price, units);
+  product x{name, price, units};
   return repo.find(x);
 }
 
-void services::modify(const int &id, const string &name, const float &price,
+void services::modify(const string &name, const float &price,
                       const int &units) {
 
-  val.validate(id, name, price, units);
-  product x{id, name, price, units};
+  val.validate(name, price, units);
+  product x{name, price, units};
   repo.modify(x);
 }

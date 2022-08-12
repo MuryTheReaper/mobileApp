@@ -9,15 +9,13 @@ using std::string;
 class product {
 
 private:
-  int id;
   string name;
   float price;
   int units;
 
 public:
-  product(const int &id, const string &name, const float &price,
-          const int &units)
-      : id{id}, name{name}, price{price}, units{units} {}
+  product(const string &name, const float &price, const int &units)
+      : name{name}, price{price}, units{units} {}
 
   ~product() = default;
 
@@ -29,15 +27,11 @@ public:
 
   product(const product &x) = default;
 
-  const int getId() const noexcept { return id; }
-
   const string getName() const noexcept { return name; }
 
   const float getPrice() const noexcept { return price; }
 
   const int getUnits() const noexcept { return units; }
-
-  void setId(const int id) noexcept { this->id = id; }
 
   void setName(const string name) noexcept { this->name = name; }
 
@@ -45,7 +39,9 @@ public:
 
   void setUnits(const int units) noexcept { this->units = units; }
 
-  friend bool operator==(const product &x, const product &y);
+  friend bool operator==(const product &x, const product &y) {
+    return x.getName() == y.getName();
+  }
 };
 
 #endif // PRODUCT_H

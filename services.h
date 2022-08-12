@@ -11,7 +11,7 @@ private:
   validator &val;
 
 public:
-  services(repository &repo, validator &val) : repo{repo}, val{val} {};
+  services(repository &repo, validator &val) : repo{repo}, val{val} {}
 
   services(const services &x) = delete;
 
@@ -23,17 +23,13 @@ public:
 
   services &operator=(services &&) = delete;
 
-  void add(const int &id, const string &name, const float &price,
-           const int &units);
+  void add(const string &name, const float &price, const int &units);
 
-  void remove(const int &id, const string &name, const float &price,
-              const int &units);
+  void remove(const string &name, const float &price, const int &units);
 
-  void modify(const int &id, const string &name, const float &price,
-              const int &units);
+  void modify(const string &name, const float &price, const int &units);
 
-  const product &find(const int &id, const string &name, const float &price,
-                      const int &units);
+  const product &find(const string &name, const float &price, const int &units);
 
   const vector<product> &getAll() const noexcept { return repo.getAll(); }
 };

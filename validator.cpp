@@ -7,7 +7,7 @@ std::ostream &operator<<(std::ostream &out, const validatorException &ex) {
   return out;
 }
 
-void validator::validate(const int &id, const string &name, const float &price,
+void validator::validate(const string &name, const float &price,
                          const int &units) {
 
   vector<string> msgs;
