@@ -19,7 +19,7 @@ private:
 
 public:
   validatorException(const std::vector<std::string> &errors) : msg{errors} {}
-  std::string getMsg() const;
+  std::vector<std::string> getMsg() const { return msg; }
   friend std::ostream &operator<<(std::ostream &out,
                                   const validatorException &ex);
 };

@@ -14,6 +14,8 @@ void validator::validate(const string &name, const float &price,
 
   if (name.size() == 0) {
     msgs.push_back("Name is empty!");
+  } else if (name.at(0) < 'A' || name.at(0) > 'Z') {
+    msgs.push_back("First letter must be uppercase!");
   }
 
   if (price <= 0) {
