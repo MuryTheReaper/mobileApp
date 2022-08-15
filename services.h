@@ -2,13 +2,18 @@
 #define SERVICES_H
 
 #include "repository.h"
+#include "undo.h"
 #include "validator.h"
+#include <memory>
+
+using std::unique_ptr;
 
 class services {
 
 private:
   repository &repo;
   validator &val;
+  vector<unique_ptr<UndoAction>> undoList;
 
 public:
   services(repository &repo, validator &val) : repo{repo}, val{val} {}
@@ -32,6 +37,8 @@ public:
   const product &find(const string &name, const float &price, const int &units);
 
   const vector<product> &getAll() const noexcept { return repo.getAll(); }
+
+  void undo();
 };
 
 class servicesException {

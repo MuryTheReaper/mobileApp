@@ -23,6 +23,7 @@ set(PROJECT_SOURCES
         repository.h repository.cpp
         services.h services.cpp
         validator.h validator.cpp
+        undo.h undo.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
