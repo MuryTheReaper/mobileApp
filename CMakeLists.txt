@@ -42,6 +42,8 @@ add_executable(mobileApp main.cpp
 
             tst_product.cpp
             tst_repository.cpp
+            tst_services.cpp
+            tst_validator.cpp
                ${GTestFiles})
 
 add_test(NAME mobileApp COMMAND mobileApp)

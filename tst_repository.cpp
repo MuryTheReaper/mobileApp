@@ -5,27 +5,6 @@
 
 using namespace testing;
 
-// class repositoryTesting : public ::testing::Test {
-// protected:
-//   void SetUp() override {
-
-//    const int id = 0;
-//    const string name = "Name";
-//    const float price = 12.3;
-//    const int units = 5;
-//    product example{id, name, price, units};
-
-//    repo.add(example);
-//  }
-
-//  void TearDown() override {
-//    // Code here will be called immediately after each test (right
-//    // before the destructor).
-//  }
-
-//  repository repo; // NOLINT
-//};
-
 TEST(repositoryTesting, getAll) {
   repository repo;
   vector<product> list{repo.getAll()};
