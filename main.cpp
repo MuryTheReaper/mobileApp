@@ -1,10 +1,20 @@
-#include "mainwindow.h"
+#include "gui.h"
 #include <QApplication>
 
-int main(int argc, char *argv[]) {
+void runGUI(int argc, char **argv) {
+  QApplication app(argc, argv);
+  repository repo;
+  validator val;
+  services serv{repo, val};
+  guiMain ui{serv};
+  ui.show();
+  app.exec();
+}
 
-  QApplication a(argc, argv);
-  MainWindow w;
-  w.show();
-  return a.exec();
+int main(int argc, char **argv) {
+
+  runGUI(argc, argv);
+
+  //
+  return 0;
 }

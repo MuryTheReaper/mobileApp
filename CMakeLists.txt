@@ -24,6 +24,7 @@ set(PROJECT_SOURCES
         services.h services.cpp
         validator.h validator.cpp
         undo.h undo.cpp
+        gui.h gui.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
